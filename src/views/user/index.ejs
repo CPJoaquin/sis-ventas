@@ -1,0 +1,40 @@
+<%- include('../layouts/header') %>
+<%- include('../layouts/menu') %>
+    <div class="container">
+        <div class="card p-5">
+            <div class="card-header">
+                <h2>Lista de Usuarios</h2>
+                <div class="form-group">
+                    <a href="/user/create" class="btn btn-outline-dark"> Nuevo </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nº</th>
+                        <th scope="col">Nómbre</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Correo</th>
+                        <th>Opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% if(users){ %>
+                            <% for(var i = 0; i<users.length; i++){ %>
+                                <tr>
+                                    <td> <%= i+1 %> </td>
+                                    <td> <%= users[i].first_name%> </td>
+                                    <td> <%= users[i].last_name%> </td>
+                                    <td> <%= users[i].username%> </td>
+                                    <td> <%= users[i].email%> </td>
+                                    <td>op</td>
+                                </tr>
+                            <%}%> 
+                        <%}%>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+<%- include('../layouts/footer') %>
