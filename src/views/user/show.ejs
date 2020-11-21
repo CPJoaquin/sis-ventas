@@ -1,0 +1,35 @@
+<%- include('../layouts/header') %>
+<%- include('../layouts/menu') %>
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>Detalle de usuario</h1>
+            <a href="/user/edit/<%= user[0].id %>" class="btn btn-outline-info">Editar</a>
+            <a href="/user/delete/<%= user[0].id %>" class="btn btn-outline-danger">Eliminar</a>            
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nómbre</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Correo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% if(user){ %>                 
+                            <tr>
+                                <td> <%= user[0].id %> </td>
+                                <td> <%= user[0].first_name%> <%= user[0].last_name%> </td>
+                                <td> <%= user[0].username%> </td>
+                                <td> <%= user[0].email%> </td>
+                            </tr>
+                    <%}%>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>
+<%- include('../layouts/footer') %>

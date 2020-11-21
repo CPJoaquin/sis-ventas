@@ -24,11 +24,12 @@
                             <% for(var i = 0; i<users.length; i++){ %>
                                 <tr>
                                     <td> <%= i+1 %> </td>
-                                    <td> <%= users[i].first_name%> </td>
-                                    <td> <%= users[i].last_name%> </td>
+                                    <td> <%= users[i].first_name%> <%= users[i].last_name%> </td>
                                     <td> <%= users[i].username%> </td>
                                     <td> <%= users[i].email%> </td>
-                                    <td>op</td>
+                                    <td class="text-center">
+                                        <a href="/user/show/<%= users[i].id %>" class="btn-sm btn-info m-auto">Ver</a>
+                                    </td>
                                 </tr>
                             <%}%> 
                         <%}%>
