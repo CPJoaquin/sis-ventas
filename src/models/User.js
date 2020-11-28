@@ -11,9 +11,13 @@ model.find = async (id) => {
     data = await pool.query("SELECT * FROM users WHERE id = ?", [id]);
     return data;
 };
+model.findByUserName = async (username) => {
+    data = await pool.query("SELECT * FROM users WHERE username = ?", [username]);
+    return data;
+}
 model.insert = async (user) => {
     try{
-        var pass = await bcrypt.encryptPass(user.password);
+        pass = await bcrypt.encryptPass(user.password);
         user.password = pass;
         return await pool.query("INSERT INTO users set ?", [user]);
     }
