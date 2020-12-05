@@ -1,18 +1,49 @@
 <div class="form-group">
     <label for="first_name">Nómbre:</label>
-    <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="first_name">
+    <input 
+        type="text" 
+        class="form-control" 
+        id="first_name" 
+        name="first_name" 
+        <% if(typeof user !== 'undefined') { %>
+            value="<%= user[0].first_name %>"
+        <% } %>
+        aria-describedby="first_name">
 </div>
 <div class="form-group">
     <label for="last_name">Apellidos:</label>
-    <input type="text" class="form-control" id="last_name" name="last_name" aria-describedby="last_name">
+    <input 
+        type="text" 
+        class="form-control" 
+        id="last_name" 
+        name="last_name" 
+        <% if(typeof user !== 'undefined') { %>
+            value="<%= user[0].last_name %>"
+        <% } %>
+        aria-describedby="last_name">
 </div>
 <div class="form-group">
     <label for="username">Nómbre:</label>
-    <input type="text" class="form-control" id="username" name="username" aria-describedby="username">
+    <input 
+        type="text" 
+        class="form-control" 
+        id="username" 
+        name="username" 
+        <% if(typeof user !== 'undefined') { %>
+            value="<%= user[0].username %>"
+        <% } %>
+        aria-describedby="username">
 </div>
 <div class="form-group">
     <label for="email">Correo:</label>
-    <input type="email" id="email" name="email" class="form-control">
+    <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        <% if(typeof user !== 'undefined') { %>
+            value="<%= user[0].email   %>"
+        <% } %>
+        class="form-control">
 </div>
 <div class="form-group">
     <label for="password">Password</label>

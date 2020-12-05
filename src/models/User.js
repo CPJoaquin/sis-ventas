@@ -25,4 +25,15 @@ model.insert = async (user) => {
         return 'error';
     }
 }
+model.update = async (id, user) => {
+    try {
+        if(typeof(user.password) !== 'undefined'){
+            pass = await bcrypt.encryptPass(user.password);
+            user.password = pass;
+        }
+        return await pool.query("UPDATE users set ? WHERE id = ?", [user, id]);
+    } catch (error) {
+        return 'error';
+    }
+}
 module.exports = model;

@@ -1,0 +1,16 @@
+<%- include('../layouts/header') %>
+<%- include('../layouts/menu') %>
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>Editar de usuario</h1>
+        </div>
+        <div class="card-body">
+            <form action="/user/update/<%= user[0].id %>" method="POST">
+                <%- include('fields')  %>
+            </form>
+        </div>
+
+    </div>
+</div>
+<%- include('../layouts/footer') %>

@@ -11,7 +11,8 @@ passport.use('local.signin', new Strategy({
     const users = await userModel.findByUserName(username);
     if(users.length > 0){
         const user = users[0];
-
+        console.log(password);
+        console.log(user.password);
         const value = await bcrypt.checkPass(password, user.password);
         console.log(value);
         if(!value){
